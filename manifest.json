@@ -1,0 +1,20 @@
+{
+  "name": "Anonymize Tweet",
+  "version": "0.1",
+  "description": "A chrome extension that hides tweet's data like name, username, avatar, # of likes, comments, and retweets.",
+  "permissions": ["activeTab","declarativeContent","storage"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.twitter.com/*"],
+      "js": ["folan.js"]
+    }
+  ],
+  "page_action": {
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 2
+}
